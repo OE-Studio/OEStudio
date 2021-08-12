@@ -1,0 +1,110 @@
+body{
+    font-family: campton;
+    background-color: #211B16;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+
+
+#TpNav{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.60);
+    margin: -10px;
+    padding: 50px 0px 30px 0px;
+}
+
+#BRSLogo{
+    width: 125px;
+    margin-top: -15px;
+    padding-right:40px;
+}
+
+#lisLst{
+    padding: px;
+    color: white;
+    list-style-type: none;
+    text-align: center;
+    margin-top: -0.2%;
+
+}
+
+#lisLst li {
+    color: white;
+    list-style-type: none;
+    display: inline;
+    padding-inline: 90px;
+}
+
+#lisLst li a {
+    color: white;
+    display:inline-block;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+
+
+
+#Heading{
+    color: white;
+}
+
+.oneSect{
+    display: flex;
+    max-width: 600px;
+    justify-content: center;
+
+    margin: auto;
+}
+
+/*THis is the div for each of the comic titles*/
+.CmIssues{
+}
+
+
+.CmIssuesImgs{
+    width:260px;
+}
+
+.TxtNdDwldBtn{
+    text-align: center;
+    margin-top: -20px;
+}
+
+.TxtNdDwldBtn h1{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.TxtNdDwldBtn h3{
+    color: white;
+    font-weight: lighter;
+    font-size: 18px;
+    margin-top: -35px;
+}
+
+
+.btn{
+    background-color: #FFA300;
+    border: none;
+    padding: 15px 50px;
+    margin-top: -0px;
+}
+.btn:hover{
+    background-color: #ffb941;
+    border: none;
+    padding: 15px 50px;
+    margin-top: -80px;
+}
+
+
+.lines{
+    background-color: #FFA300;
+    border: none;
+    max-width: 400px;
+    height: 1px;
+}
