@@ -161,9 +161,6 @@
 }
 
 
-
-
-
 :root{
     --greyText: #5C5C5C;
     --black: black;
@@ -202,9 +199,23 @@
 
 .navHeader{
     box-sizing: border-box;
-    margin: 24px;
+    margin: 12px 24px;
     display:flex;
     justify-content: space-between;
+}
+
+#toggleMode{
+    transform: scale(0.7);
+    background-color: var(--highlight);
+    padding: 12px;
+}
+
+#logo{
+    width: 56px;
+}
+
+#toggleMode{
+    margin-right: -10px;
 }
 
 .navHeader img:hover{
@@ -312,7 +323,7 @@ right: 0;
 display: inline-block;
 /* border:1px solid  red; */
 color: var(--greyText);
-font-weight: bolder;
+font-weight: 400;
 font-style: normal;
 font-size: 16px;
     }
@@ -351,6 +362,7 @@ font-weight: bolder;
 font-style: normal;
 font-size: 16px;
 line-height: 2;
+font-weight: 400;
 overflow:auto;
 height: 100%;
     }
@@ -381,7 +393,7 @@ height: 100%;
 display: inline-block;
 /* border:1px solid  red; */
 color: var(--greyText);
-font-weight: bolder;
+font-weight: 400;
 font-style: normal;
 font-size: 16px;
 line-height: 2;
@@ -406,7 +418,7 @@ line-height: 2;
         }
 
         .siteText{
-            margin-top: 16%;
+            margin-top: 1vh;
             padding: 36px;
         }
         
