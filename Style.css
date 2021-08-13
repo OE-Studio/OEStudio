@@ -220,7 +220,7 @@
       background-image: url('images/mobileGrid.svg');
       background-size: cover;
       background-repeat: repeat;
-      height: 53vh;
+      height: 51vh;
       width: 100%;
       /* color:red; */
       position: absolute;
@@ -257,6 +257,11 @@ right: 0;
       width: 54vw;
       animation: MoveUpDown 5s linear infinite;
   }
+
+.socialIcons a:hover{
+    transform: scale(1.2);
+}
+
 
 .imgPersonnel2{
     position: absolute;
@@ -298,7 +303,7 @@ right: 0;
     }
 
     .welcomeSctn{
-        padding: 24px;
+        padding: 06px 24px;
         display: flex;
         align-items: center;
     }
@@ -380,6 +385,17 @@ font-weight: bolder;
 font-style: normal;
 font-size: 16px;
 line-height: 2;
+    }
+
+    .textImg{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .backgroundGrid{
+        top:unset;
+        bottom:0;
+        height: 30vh;
     }
 
 
@@ -485,7 +501,7 @@ line-height: 2;
         }
 
         .titleText h1{
-            font-size: 70px;
+            font-size: 65px;
         }
 .alot{
     left: 20vw;
@@ -589,6 +605,58 @@ top: 15vh;
 
 
 }
+
+
+
+@media only screen 
+      and (max-device-width: 375px){
+          /* .pictures{display:none;} */
+         
+          .siteText{
+              /* padding:0; */
+              margin: -1vh;
+            transform: scale(0.88);
+            margin-left: -22px;
+        }
+.alot{
+    left: 65vw;
+}
+        .welcomeSctn{
+            padding:12px 24px;
+        }
+
+        .titleText h1{
+            line-height: 1.1;
+        }
+
+        .emojiStar{
+            /* top: 0; */
+            width: 5vw;
+        }
+
+        .navHeader{
+            /* border: 1px solid red; */
+            margin-bottom: 0px;
+        }
+
+        .textImg{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .backgroundGrid{
+            top:unset;
+            bottom:0;
+            height: 30vh;
+        }
+/* 
+        .navHeader{
+            transform: scale(0.95);
+        } */
+
+      }
+
+      
 
 /* Animation */
 
