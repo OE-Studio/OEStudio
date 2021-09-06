@@ -841,6 +841,12 @@ margin-bottom: 0px;
 }
 
 @media (min-width: 1380px) {
+
+  .titleText h1{
+    height: auto;
+    
+  }
+
   #alot {
     /* left: 15vw; */
         right: 20%;
