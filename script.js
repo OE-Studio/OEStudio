@@ -2,65 +2,63 @@ instagramButton = document.getElementById('instagramIcon');
 twitterButton = document.getElementById('twitterIcon');
 mailButton = document.getElementById('mailIcon');
 logo = document.getElementById('logo');
+logoSrcset = document.getElementById('logoSub');
 alot = document.getElementById('alot');
 Image = document.getElementById('headerImage');
 
 
 toggleButton = document.getElementById('toggleMode');
+toggleButtonDark = document.getElementById('toggleModeDark');
 var mode = 1;
 
-toggleButton.addEventListener('click', ()=>{
-   if(mode == 1 || mode==1 & window.matchMedia('(prefer-color-scheme: dark)')){
-       mode = 0;
-       alot.setAttribute('src', 'images/backgroundImageDark.svg');
-       Image.setAttribute = "url('images/mobileGridDark.svg')";
-       logo.setAttribute('src', 'images/logolight.svg');
-      //  instagramButton.setAttribute('src', 'images/InstagramLogoLight.svg' );
-      //  twitterButton.setAttribute('src', 'images/TwitterLogoLight.svg' );
-      //  mailButton.setAttribute('src', 'images/EnvelopeSimpleLight.svg' );
-       toggleButton.setAttribute('src', 'images/Sun.svg' );
-       document.documentElement.style
-    .setProperty('--greyText', '#C4C4C4');
-    document.documentElement.style
-    .setProperty('--black', 'white');
-    document.documentElement.style
-    .setProperty('--white', 'black');
-    document.documentElement.style
-    .setProperty('--highlight', 'rgba(255, 0, 0, 0.24)');
-    document.documentElement.style
-    .setProperty('--stroke', '#2E2E2E');
-    document.documentElement.style
-    .setProperty('--alotColor', 'white');
-    if(window.matchMedia('(min-width: 992px)').matches){
-        grid.style.backgroundImage = "url('images/webGridDark.svg')"
-      }
-
-} else{
-    mode = 1;
-    // grid.style.backgroundImage = "url('images/mobileGrid.svg')"
-    alot.setAttribute('src', 'images/alot.svg')
-    logo.setAttribute('src', 'images/oe.svg')
-    // instagramButton.setAttribute('src', 'images/InstagramLogo.svg' );
-    //    twitterButton.setAttribute('src', 'images/TwitterLogo.svg' );
-    //    mailButton.setAttribute('src', 'images/EnvelopeSimple.svg' );
-    toggleButton.setAttribute('src', 'images/MoonStars.svg' );
-    document.documentElement.style
-    .setProperty('--greyText', '#5C5C5C');
-    document.documentElement.style
-    .setProperty('--black', 'black');
-    document.documentElement.style
-    .setProperty('--white', 'white');
-    document.documentElement.style
-    .setProperty('--highlight', 'rgba(255, 0, 0, 0.06)');
-    document.documentElement.style
-    .setProperty('--stroke', '#eaeaea');
-    document.documentElement.style
-    .setProperty('--alotColor', 'red');
-    if(window.matchMedia('(min-width: 992px)').matches){
-        grid.style.backgroundImage = "url('images/webGrid.svg')"
-      }
-
+if (window.matchMedia('prefers-color-scheme')) {
+  mode = 0
 }
+
+toggleButton.addEventListener('click', () => {
+  if (mode == 1) {
+    mode = 0;
+    alot.setAttribute('src', 'images/backgroundImageDark.svg');
+    console.log(logo.src)
+    logo.src = 'images/logolight.svg';
+    logoSrcset.srcset = 'images/logolight.svg';
+    // logo.style.display="none";
+    toggleButton.setAttribute('src', 'images/Sun.svg');
+    toggleButtonDark.setAttribute('srcset', 'images/Sun.svg');
+    document.documentElement.style
+      .setProperty('--greyText', '#C4C4C4');
+    document.documentElement.style
+      .setProperty('--black', 'white');
+    document.documentElement.style
+      .setProperty('--white', 'black');
+    document.documentElement.style
+      .setProperty('--highlight', 'rgba(255, 0, 0, 0.24)');
+    document.documentElement.style
+      .setProperty('--stroke', '#2E2E2E');
+    document.documentElement.style
+      .setProperty('--alotColor', 'white');
+  } else {
+    console.log('lightmode');
+    mode = 1;
+    alot.setAttribute('src', 'images/alot.svg');
+    logo.src = 'images/oe.svg';
+    logoSrcset.srcset = 'images/oe.svg';
+    toggleButton.setAttribute('src', 'images/MoonStars.svg');
+    toggleButtonDark.setAttribute('srcset', 'images/MoonStars.svg');
+    document.documentElement.style
+      .setProperty('--greyText', '#5C5C5C');
+    document.documentElement.style
+      .setProperty('--black', 'black');
+    document.documentElement.style
+      .setProperty('--white', 'white');
+    document.documentElement.style
+      .setProperty('--highlight', 'rgba(255, 0, 0, 0.06)');
+    document.documentElement.style
+      .setProperty('--stroke', '#eaeaea');
+    document.documentElement.style
+      .setProperty('--alotColor', 'red');
+    
+  }
 })
 
 
@@ -74,7 +72,7 @@ toggleButton.addEventListener('click', ()=>{
 function Perspective() {
   // Init
   var container = document.getElementById("container"),
-      inner = document.getElementById("inner");
+    inner = document.getElementById("inner");
 
   // Mouse
   var mouse = {
@@ -82,16 +80,16 @@ function Perspective() {
     _y: 0,
     x: 0,
     y: 0,
-    updatePosition: function(event) {
+    updatePosition: function (event) {
       var e = event || window.event;
       this.x = e.clientX - this._x;
       this.y = (e.clientY - this._y) * -1;
     },
-    setOrigin: function(e) {
+    setOrigin: function (e) {
       this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
       this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
     },
-    show: function() {
+    show: function () {
       return "(" + this.x + ", " + this.y + ")";
     }
   };
@@ -103,21 +101,21 @@ function Perspective() {
 
   var counter = 0;
   var refreshRate = 10;
-  var isTimeToUpdate = function() {
+  var isTimeToUpdate = function () {
     return counter++ % refreshRate === 0;
   };
 
   //----------------------------------------------------
 
-  var onMouseEnterHandler = function(event) {
+  var onMouseEnterHandler = function (event) {
     update(event);
   };
 
-  var onMouseLeaveHandler = function() {
+  var onMouseLeaveHandler = function () {
     inner.style = "";
   };
 
-  var onMouseMoveHandler = function(event) {
+  var onMouseMoveHandler = function (event) {
     if (isTimeToUpdate()) {
       update(event);
     }
@@ -125,7 +123,7 @@ function Perspective() {
 
   //----------------------------------------------------
 
-  var update = function(event) {
+  var update = function (event) {
     mouse.updatePosition(event);
     updateTransformStyle(
       (mouse.y / inner.offsetHeight / 2).toFixed(2),
@@ -133,7 +131,7 @@ function Perspective() {
     );
   };
 
-  var updateTransformStyle = function(x, y) {
+  var updateTransformStyle = function (x, y) {
     var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
     inner.style.transform = style;
     inner.style.webkitTransform = style;
@@ -152,9 +150,8 @@ function Perspective() {
 Perspective();
 
 var design = document.getElementById('design');
-console.log(design);
 var designTitle = document.getElementById('designTitle');
-console.log(design);
+console.log(logo);
 var designDescription = document.getElementById("designObjDescription");
 var documentDescription = document.getElementById("documentObjDescription");
 var documentation = document.getElementById('documentation');
@@ -162,41 +159,41 @@ var documentationCont = document.getElementById('documentationContainer');
 var developCont = document.getElementById('developContainer');
 var developDescription = document.getElementById('developObjDescription');
 
-if(window.matchMedia('max-width: 991px')){
-design.addEventListener('click', ()=>{
-console.log(designDescription.classList);
+if (window.matchMedia('max-width: 991px')) {
+  design.addEventListener('click', () => {
+    console.log(designDescription.classList);
 
-  designDescription.classList.toggle("active");
-  documentation.classList.toggle("hide");
-  documentationCont.classList.toggle("width");
-  documentDescription.classList.toggle("hide");
-  // designTitle.classList.toggle("hide");
-  designTitle.classList.toggle("active");
-  
-})
+    designDescription.classList.toggle("active");
+    documentation.classList.toggle("hide");
+    documentationCont.classList.toggle("width");
+    documentDescription.classList.toggle("hide");
+    // designTitle.classList.toggle("hide");
+    designTitle.classList.toggle("active");
 
-documentationCont.addEventListener('click', ()=>{
-  console.log(designDescription.classList);
-  documentation.classList.toggle("active");
+  })
+
+  documentationCont.addEventListener('click', () => {
+    console.log(designDescription.classList);
+    documentation.classList.toggle("active");
     documentDescription.classList.toggle("active");
     designDescription.classList.toggle("hide");
     designTitle.classList.toggle("hide");
     design.classList.toggle("width");
-    
+
   })
 }
 
 
 window.addEventListener('mouseover', (e) => {
-if(e.target ==design){
-  designDescription.classList.toggle("active");
-}
+  if (e.target == design) {
+    designDescription.classList.toggle("active");
+  }
 
-if(e.target == documentationCont){
-  documentDescription.classList.toggle("active");
-}
+  if (e.target == documentationCont) {
+    documentDescription.classList.toggle("active");
+  }
 
-if(e.target == developCont){
-  developDescription.classList.toggle("active");
-}
+  if (e.target == developCont) {
+    developDescription.classList.toggle("active");
+  }
 })

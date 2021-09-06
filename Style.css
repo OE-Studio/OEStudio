@@ -180,6 +180,9 @@
   --email: #77b255;
   --emailHighlight: #77b2551f;
   --alotColor: red;
+  --designColor:#F9F9F9;
+  --designColor:#F9F9F9;
+  --designColor:#F9F9F9;
 }
 
 
@@ -203,6 +206,7 @@
     --twitterHighlight: rgba(93, 174, 236, 0.575);
     --email: #77b255;
     --alotColor: white;
+    --designColor:#686868;
   }
 }
 
@@ -319,7 +323,7 @@ body {
 }
 
 .headerImage picture img {
-  width: 100%;
+  height: 100%;
 }
 
 .imgVision {
@@ -550,7 +554,8 @@ body {
 .objDescription{
 display:none;
 font-weight: 300;
-line-height: 1.1;
+line-height: 1.5;
+font-size: 14px;
 }
 
 .active{
@@ -726,8 +731,8 @@ margin-bottom: 0px;
   }
 
   .headerImage picture img{
-      width:40vw;
-      height:100%;
+      width:100%;
+      /* height:100%; */
       z-index: -20;
   }
 
