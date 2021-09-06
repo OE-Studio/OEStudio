@@ -200,3 +200,5 @@ if(e.target == developCont){
   developDescription.classList.toggle("active");
 }
 })
+
+console.log(window.screen.width)
