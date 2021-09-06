@@ -37,6 +37,16 @@ toggleButton.addEventListener('click', () => {
       .setProperty('--stroke', '#2E2E2E');
     document.documentElement.style
       .setProperty('--alotColor', 'white');
+      document.documentElement.style
+      .setProperty('--designColor', '#686868');
+      document.documentElement.style
+      .setProperty('--documentColor', '#8e8e8e');
+      document.documentElement.style
+      .setProperty('--developColor', '#5b5b5b');
+
+
+
+
   } else {
     console.log('lightmode');
     mode = 1;
@@ -57,6 +67,12 @@ toggleButton.addEventListener('click', () => {
       .setProperty('--stroke', '#eaeaea');
     document.documentElement.style
       .setProperty('--alotColor', 'red');
+      document.documentElement.style
+      .setProperty('--designColor', '#F9F9F9');
+      document.documentElement.style
+      .setProperty('--documentColor', '#e9e9e9');
+      document.documentElement.style
+      .setProperty('--developColor', '#f4f4f4');
     
   }
 })
@@ -158,42 +174,38 @@ var documentation = document.getElementById('documentation');
 var documentationCont = document.getElementById('documentationContainer');
 var developCont = document.getElementById('developContainer');
 var developDescription = document.getElementById('developObjDescription');
+var icons = [...document.getElementsByClassName('icons')];
+console.log(icons[0].classList);
 
-if (window.matchMedia('max-width: 991px')) {
-  design.addEventListener('click', () => {
-    console.log(designDescription.classList);
-
-    designDescription.classList.toggle("active");
-    documentation.classList.toggle("hide");
-    documentationCont.classList.toggle("width");
-    documentDescription.classList.toggle("hide");
-    // designTitle.classList.toggle("hide");
-    designTitle.classList.toggle("active");
-
-  })
-
-  documentationCont.addEventListener('click', () => {
-    console.log(designDescription.classList);
-    documentation.classList.toggle("active");
-    documentDescription.classList.toggle("active");
-    designDescription.classList.toggle("hide");
-    designTitle.classList.toggle("hide");
-    design.classList.toggle("width");
-
-  })
-}
-
-
-window.addEventListener('mouseover', (e) => {
-  if (e.target == design) {
-    designDescription.classList.toggle("active");
-  }
-
-  if (e.target == documentationCont) {
-    documentDescription.classList.toggle("active");
-  }
-
-  if (e.target == developCont) {
-    developDescription.classList.toggle("active");
-  }
+design.addEventListener('click', () => {
+  designDescription.classList.toggle("active");
+  icons[0].classList.toggle('ri-add-fill');
+  icons[0].classList.toggle('ri-subtract-line');
 })
+
+documentationCont.addEventListener('click', () => {
+  documentDescription.classList.toggle("active");
+  icons[1].classList.toggle('ri-add-fill');
+  icons[1].classList.toggle('ri-subtract-line');
+})
+
+developCont.addEventListener('click', () => {
+  developDescription.classList.toggle("active");
+  icons[2].classList.toggle('ri-add-fill');
+  icons[2].classList.toggle('ri-subtract-line');
+})
+
+
+// window.addEventListener('mouseover', (e) => {
+//   if (e.target == design) {
+//     designDescription.classList.toggle("active");
+//   }
+
+//   if (e.target == documentationCont) {
+//     documentDescription.classList.toggle("active");
+//   }
+
+//   if (e.target == developCont) {
+//     developDescription.classList.toggle("active");
+//   }
+// })
