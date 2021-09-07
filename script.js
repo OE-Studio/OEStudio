@@ -214,3 +214,6 @@ developCont.addEventListener('click', () => {
 //     developDescription.classList.toggle("active");
 //   }
 // })
+
+
+
