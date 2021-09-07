@@ -5,7 +5,7 @@ logo = document.getElementById('logo');
 logoSrcset = document.getElementById('logoSub');
 alot = document.getElementById('alot');
 Image = document.getElementById('headerImage');
-
+ImageSub = document.getElementById('headerImageSub');
 
 toggleButton = document.getElementById('toggleMode');
 toggleButtonDark = document.getElementById('toggleModeDark');
@@ -25,6 +25,8 @@ toggleButton.addEventListener('click', () => {
     // logo.style.display="none";
     toggleButton.setAttribute('src', 'images/Sun.svg');
     toggleButtonDark.setAttribute('srcset', 'images/Sun.svg');
+    Image.setAttribute('src', './images/backgroundImageDark.svg');
+    ImageSub.setAttribute('srcset', 'images/backgroundImageDark.svg');
     document.documentElement.style
       .setProperty('--greyText', '#C4C4C4');
     document.documentElement.style
@@ -55,6 +57,9 @@ toggleButton.addEventListener('click', () => {
     logoSrcset.srcset = 'images/oe.svg';
     toggleButton.setAttribute('src', 'images/MoonStars.svg');
     toggleButtonDark.setAttribute('srcset', 'images/MoonStars.svg');
+    Image.setAttribute('src', './images/backgroundImage.svg');
+    ImageSub.setAttribute('srcset', 'images/backgroundImage.svg');
+
     document.documentElement.style
       .setProperty('--greyText', '#5C5C5C');
     document.documentElement.style
