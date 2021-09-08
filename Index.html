@@ -5,8 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Meta tags -->
     <title>OE Studios</title>
-    <link rel="icon" href="/images/logolight.svg">
+    <meta name="description" content="BRAND IDENTITY DESIGN, WEB DESIGN, APP DEVELOPMENT & DOCUMENT PUBLISHING">
+    <meta name="og:title" content="Optimised and Equipped">
+    <meta name="og:url" content="https://oestudio.digital/">
+    <meta name="og:description" content="OE Studio is a multidisciplinary design studio driven by excellence. We provide BRAND IDENTITY DESIGN, WEB DESIGN, APP DEVELOPMENT & DOCUMENT PUBLISHING.">
+    <meta name="og:image" content="./images/ogimage.png" >
+   
+
+    <!-- Meta tags End -->
+
+    <link rel="icon" href="/images/oe.svg" >
+    <link rel="icon" href="/images/logolight.svg" media="(prefers-color-scheme:dark)">
     <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
@@ -184,7 +196,10 @@
 
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',
                 (e) => {
-                    if (e.matches) { bodyMovingFileDisplay(animProperDark) } else { bodyMovingFileDisplay(animProperLight); }
+                    console.log('change' )
+                    if (e.matches) { 
+                        bgContainer.innerHTML = "";bodyMovingFileDisplay(animProperDark) } else { 
+                            bgContainer.innerHTML = "";bodyMovingFileDisplay(animProperLight); }
 
                 }
             );
