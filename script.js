@@ -222,6 +222,7 @@ developCont.addEventListener('click', () => {
 
 
 
+
 toggleButtonDark.addEventListener('click', () => {
   if (mode == 1) {
     mode = 0;
@@ -288,3 +289,4 @@ toggleButtonDark.addEventListener('click', () => {
     
   }
 })
+
