@@ -176,6 +176,10 @@
 
         // let toggleButton = ""
         var modeBackground = 1;
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+            modeBackground = 0;
+        }
+
         window.addEventListener('load', (e) => {
 
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',
@@ -192,12 +196,13 @@
 
             toggleButton.addEventListener('click', () => {
                 if (modeBackground == 1) {
-                    modeBackground == 0
-                    // bgContainer.innerHTML = "";
-                    bodyMovingFileDisplay(animProperDark)
+                    modeBackground = 0
+                    bgContainer.innerHTML = "";
+                    bodyMovingFileDisplay
+                    (animProperDark);
                 } else {
-                    modeBackground == 1;
-                    // bgContainer.innerHTML = "";
+                    modeBackground = 1;
+                    bgContainer.innerHTML = "";
                     bodyMovingFileDisplay(animProperLight)
                 }
             })

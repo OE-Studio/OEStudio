@@ -10,6 +10,9 @@ ImageSub = document.getElementById('headerImageSub');
 toggleButton = document.getElementById('toggleMode');
 toggleButtonDark = document.getElementById('toggleModeDark');
 var mode = 1;
+if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+  mode = 0;
+}
 
 // if (window.matchMedia('prefers-color-scheme')) {
 //   mode = 0
@@ -220,8 +223,8 @@ developCont.addEventListener('click', () => {
 
 
 toggleButtonDark.addEventListener('click', () => {
-  if (mode == 0) {
-    mode = 1;
+  if (mode == 1) {
+    mode = 0;
     alot.setAttribute('src', 'images/backgroundImageDark.svg');
     console.log(logo.src)
     logo.src = 'images/logolight.svg';
@@ -255,7 +258,7 @@ toggleButtonDark.addEventListener('click', () => {
 
   } else {
     console.log('lightmode');
-    mode = 0;
+    mode = 1;
     alot.setAttribute('src', 'images/alot.svg');
     logo.src = 'images/oe.svg';
     logoSrcset.srcset = 'images/oe.svg';
