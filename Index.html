@@ -12,11 +12,13 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js" integrity="sha512-srGxQe2w7s50+5/nNgEVKYtBm15zRylJwdjxYnGEZr3mmHFJKFjA/ImA2OKizVzoIDX8XISMHDI1+az9pnumbQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js"
+        integrity="sha512-srGxQe2w7s50+5/nNgEVKYtBm15zRylJwdjxYnGEZr3mmHFJKFjA/ImA2OKizVzoIDX8XISMHDI1+az9pnumbQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie_html.js"></script>
     <script src="/script.js" defer></script>
-   
-    
+
+
 </head>
 
 <body>
@@ -48,7 +50,8 @@
         </div>
 
         <div class="textImg">
-            <div class="headerImage" id="container" class="lottie" data-animation-path="animation/">
+            <div class="headerImage" id="container">
+
                 <!-- <picture id="inner">
                     <source srcset="./images/backgroundImageDark.svg" media="(prefers-color-scheme: dark)"  id="headerImageSub">
                     <img src="./images/backgroundImage.svg" id="headerImage">
@@ -99,7 +102,7 @@
         <div class="objectives" id="design" style="background-color: var(--designColor);
         ;">
             <div class="objTitle">
-                
+
                 <div class="objIcons">
                     <i class="ri-pencil-ruler-2-line"></i>
                     <i class="ri-add-fill icons"></i>
@@ -110,7 +113,7 @@
                 From product design to logo, Illustrations, icons brand devlopment and everything visual Design.
             </p>
         </div>
-        <div class= "objectives" style="background-color: var(--documentColor);
+        <div class="objectives" style="background-color: var(--documentColor);
         " id="documentationContainer">
             <div class="objTitle">
                 <div class="objIcons">
@@ -126,7 +129,7 @@
         </div>
         <div class="objectives" style="background-color: var(--developColor);" id="developContainer">
             <div class="objTitle">
-                
+
                 <div class="objIcons">
                     <i class="ri-terminal-box-line "></i>
                     <i class="ri-add-fill icons"></i>
@@ -134,8 +137,8 @@
                 <p>Development</p>
             </div>
             <p class="objDescription" id="developObjDescription">
-                Web development, software development, 
-and mobile app development
+                Web development, software development,
+                and mobile app development
             </p>
         </div>
 
@@ -143,24 +146,66 @@ and mobile app development
 
 
     <script>
-        // lottie.loadAnimation({
-        //   container: document.getElementById('container'), // the dom element that will contain the animation: ;
-        //   renderer: 'svg',
-        //   loop: true,
-        //   autoplay: true,
-        //   path: 'https://assets4.lottiefiles.com/packages/lf20_lr6ohmgk.json' // the path to the animation json
-        // });
-        
-                var animation = bodymovin.loadAnimation({
-          container: document.getElementById('container'), // Required
-          path: 'https://assets4.lottiefiles.com/packages/lf20_lr6ohmgk.json', // Required
-          renderer: 'svg/', // Required
-          loop: true, // Optional
-          autoplay: true, // Optional
-          name: "headerImage", // Name for future reference. Optional.
-        });
-        animation.setSpeed(0.5);
-            </script>
+        let darkmode = ""
+
+        function bodyMovingFileDisplay(animationProp) {
+                let animation = bodymovin.loadAnimation(animationProp);
+                animation.setSpeed(0.5);
+            }
+
+        let animProperLight = {
+            container: document.getElementById('container'), // Required
+            path: 'images/data.json',
+            renderer: 'svg', // Required
+            loop: true, // Optional
+            autoplay: true, // Optional
+        }
+
+        let animProperDark = {
+            container: document.getElementById('container'), // Required
+            path: 'images/dataInvert.json',
+            renderer: 'svg', // Required
+            loop: true, // Optional
+            autoplay: true, // Optional
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').matches ?
+            bodyMovingFileDisplay(animProperDark)
+            :
+            bodyMovingFileDisplay(animProperLight);
+
+        // let toggleButton = ""
+        var modeBackground = 1;
+        window.addEventListener('load', (e) => {
+
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',
+                (e) => {
+                    if (e.matches) { bodyMovingFileDisplay(animProperDark) } else { bodyMovingFileDisplay(animProperLight); }
+
+                }
+            );
+
+            let toggleButton = document.getElementById('toggleMode');
+            let bgContainer = document.getElementById('container');
+
+
+
+            toggleButton.addEventListener('click', () => {
+                if (modeBackground == 1) {
+                    modeBackground == 0
+                    // bgContainer.innerHTML = "";
+                    bodyMovingFileDisplay(animProperDark)
+                } else {
+                    modeBackground == 1;
+                    // bgContainer.innerHTML = "";
+                    bodyMovingFileDisplay(animProperLight)
+                }
+            })
+
+        })
+
+
+    </script>
 </body>
 
 </html>
