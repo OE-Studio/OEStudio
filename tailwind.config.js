@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         'lexend': ["Lexend"],
         'cabinet': ["CabinetGrotesk"],
+        'familjen': ['Familjen Grotesk'],
       },
     },
   },

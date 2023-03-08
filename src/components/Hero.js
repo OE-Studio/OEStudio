@@ -1,5 +1,5 @@
 import React from "react";
-import bgLight from "../assets/images/hero.svg";
+// import bgLight from "../assets/images/hero.svg";
 import NavBar from "./NavBar";
 
 const Hero = () => {
@@ -8,11 +8,11 @@ const Hero = () => {
       <div className="relative z-10">
         <NavBar />
         </div>
-      <img
+      {/* <img
         src={bgLight}
         alt=""
         className="absolute left-1/2 -translate-x-1/2 top-0 scale-[250%] md:scale-[175%] xl:scale-100 xl:-top-[10%] z-0"
-      />
+      /> */}
       <div className="container p-5 md:p-8 lg:px-20 mx-auto lg:py-0">
         <div className="max-w-[1016px]">
           <div className="inline-flex items-start justify-start px-4 py-3 border border-gray-700 mb-[51px] md:mb-5">

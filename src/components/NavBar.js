@@ -196,7 +196,7 @@ const NavBar = () => {
                       <p className="text-[40px] md:text-6xl font-bold group-hover:text-primary text-white">
                         {menu.title}
                       </p>
-                      <div className="invisible group-hover:visible anim-left">
+                      <div className="invisible group-hover:visible">
                         <ActiveIndicator />
                       </div>
                     </div>

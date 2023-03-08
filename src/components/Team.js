@@ -4,7 +4,9 @@ import staffs from "./staffs";
 const Individual = ({ name, title, image }) => {
   return (
     <div className="w-[47%] md:w-[30%] lg:w-[23%] xl:w-[230px] space-y-4 items-start justify-start ">
-      <div className="bg-primary w-full h-[230px]" />
+      <div className="bg-primary w-full h-[230px] overflow-hidden">
+        <img src={image} alt="" />
+      </div>
       <div className="flex flex-col space-y-2.5 items-start justify-start">
         <p className="text-[15px] lg:text-xl font-bold text-white font-cabinet">
           {name}
