@@ -14,7 +14,7 @@ const staffs = [
     {
         name: 'Oluwatobi Bamigbade',
         title: 'Designer',
-        image: '',
+        image: 'https://images.pexels.com/photos/15895254/pexels-photo-15895254.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
         name: 'Olaolu Olowofila',
@@ -44,7 +44,7 @@ const staffs = [
     {
         name: 'Samuel Babalola',
         title: 'Designer',
-        image: '',
+        image: 'https://images.pexels.com/photos/15894901/pexels-photo-15894901.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
         name: 'Adeyemi Isaiah',

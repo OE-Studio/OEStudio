@@ -152,7 +152,9 @@ const NavBar = () => {
     <nav className={`relative ${menu ? "bg-bg" : ""} w-full`}>
       <div className="container mx-auto p-5 md:p-8 lg:px-20 flex justify-between items-center xl:mb-[82px] h-[15vh] relative  ">
         <div className="flex items-center">
-          <NavLogo />
+          <Link to="/">
+            <NavLogo />
+          </Link>
           <p className="text-xl font-semibold text-white hidden  md:inline-block">
             Studio
           </p>
